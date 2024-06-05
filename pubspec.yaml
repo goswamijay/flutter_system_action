@@ -1,7 +1,7 @@
 name: flutter_system_action
-description: "A new Flutter project."
+description: A Flutter package for access system action button.
 version: 1.0.1
-homepage:
+homepage: https://github.com/goswamijay/flutter_system_action
 
 environment:
   sdk: '>=3.3.3 <4.0.0'

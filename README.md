@@ -16,18 +16,18 @@ volume, toggling the torch, changing brightness, and more on Android devices.
 
 ## 🚀 Getting Started
 
-### 📦 Installation
+### Installation
 
 Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_system_action: ^1.0.1
+  flutter_system_action: ^1.0.2
 ```
 
 Then, run flutter pub get to install the package.
 
-## 🛠️ Android Permissions
+## Android Permissions
 
 This plugin requires certain permissions to function properly. Make sure to add the following
 permissions to your AndroidManifest.xml file:
@@ -49,7 +49,7 @@ permissions to your AndroidManifest.xml file:
 <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 ```
 
-## 💡 Usage
+## Usage
 
 Import the package in your Dart code:
 
@@ -57,32 +57,30 @@ Import the package in your Dart code:
 import 'package:flutter_system_action/flutter_system_action.dart';
 ```
 
-## 📚 API
+## API
 
 ### Methods
 
-- `volumeButtonRaiseEvent()`: Raises the music volume.
-- `volumeButtonLowerEvent()`: Lowers the music volume.
+- `volumeButtonRaiseEvent()`: Increases the music volume.
+- `volumeButtonLowerEvent()`: Decreases the music volume.
 - `torchButtonOnEvent()`: Turns on the torch (flashlight)
 - `torchButtonOffEvent()`: Turns off the torch (flashlight).
 - `brightnessRaiseEvent()`: Increases the screen brightness.
-
-
 - `brightnessLowerEvent()`: Decreases the screen brightness.
 - `brightnessMaxEvent()`: Sets the screen brightness to maximum.
 - `brightnessZeroEvent()`: Sets the screen brightness to zero.
-- `ringtoneVolumeRaiseEvent()`: Raises the ringtone volume.
-- `ringtoneVolumeDownEvent()`: Lowers the ringtone volume.
-- `notificationVolumeRaisePress()`: Raises the notification volume.
-- ` notificationVolumeDownPress()`: Lowers the notification volume.
+- `ringtoneVolumeRaiseEvent()`: Increases the ringtone volume.
+- `ringtoneVolumeDownEvent()`: Decreases the ringtone volume.
+- `notificationVolumeRaisePress()`: Increases the notification volume.
+- ` notificationVolumeDownPress()`: Decreases the notification volume.
 - `vibrationButtonPress()`: Sets the phone to vibration mode.
 - `ringModeOnButtonPress()`: Sets the phone to ring mode.
 - `darkModeEventButtonPressed()`: Opens the display settings for dark mode.
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.

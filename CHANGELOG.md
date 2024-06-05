@@ -10,3 +10,16 @@
 - Implemented a new feature to active vibration mode.
 - Implemented a new feature to active ringtone mode.
 - Implemented a new feature to active dark mode.
+
+## 1.0.2
+
+### update
+
+- Fixed minor changes.
+
+## 1.0.3
+
+### update
+
+- update readme file
+

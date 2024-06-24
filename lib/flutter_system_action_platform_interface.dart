@@ -87,4 +87,22 @@ abstract class FlutterSystemActionPlatform extends PlatformInterface {
     throw UnimplementedError(
         'darkModeEventButtonPressed() has not been implemented.');
   }
+
+  Future<int> getDeviceOrientation() async {
+    throw UnimplementedError(
+        'getDeviceOrientation() has not been implemented.');
+  }
+
+  Future<String> getDeviceLocale() async {
+    throw UnimplementedError('getDeviceLocale() has not been implemented.');
+  }
+
+  Future<int> getNetworkStatus() async {
+    throw UnimplementedError('getNetworkStatus() has not been implemented.');
+  }
+
+  Future<int> getBatteryChargingStatus() async {
+    throw UnimplementedError(
+        'getBatteryChargingStatus() has not been implemented.');
+  }
 }

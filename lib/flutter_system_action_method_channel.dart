@@ -82,4 +82,32 @@ class MethodChannelFlutterSystemAction extends FlutterSystemActionPlatform {
   Future<void> darkModeEventButtonPressed() async {
     await methodChannel.invokeMethod('darkModeEventButtonPressed');
   }
+
+  @override
+  Future<int> getDeviceOrientation() async {
+    final int orientation =
+        await methodChannel.invokeMethod('getDeviceOrientation');
+    return orientation;
+  }
+
+  @override
+  Future<String> getDeviceLocale() async {
+    final String deviceLocale =
+        await methodChannel.invokeMethod('getDeviceLocale');
+    return deviceLocale;
+  }
+
+  @override
+  Future<int> getNetworkStatus() async {
+    final int networkStatus =
+        await methodChannel.invokeMethod('getNetworkStatus');
+    return networkStatus;
+  }
+
+  @override
+  Future<int> getBatteryChargingStatus() async {
+    final int chargingStatus =
+        await methodChannel.invokeMethod('getBatteryChargingStatus');
+    return chargingStatus;
+  }
 }

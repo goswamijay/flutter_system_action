@@ -115,6 +115,33 @@ class _MyAppState extends State<MyApp> {
                       .darkModeEventButtonPressed(),
                   buttonName: "Dark Mode",
                 ),
+                _buildEventButton(
+                  onTap: () async {
+                    int orientation =
+                        await _flutterSystemActionPlugin.getDeviceOrientation();
+                    return orientation;
+                  },
+                  buttonName: "Device Orientation",
+                ),
+              ]),
+              _buildRow([
+                _buildEventButton(
+                  onTap: () async =>
+                      await _flutterSystemActionPlugin.getDeviceLocale(),
+                  buttonName: "Device Locale",
+                ),
+                _buildEventButton(
+                  onTap: () async =>
+                      await _flutterSystemActionPlugin.getNetworkStatus(),
+                  buttonName: "Network Status",
+                ),
+              ]),
+              _buildRow([
+                _buildEventButton(
+                  onTap: () async => await _flutterSystemActionPlugin
+                      .getBatteryChargingStatus(),
+                  buttonName: "Charging Status",
+                ),
               ]),
             ],
           ),

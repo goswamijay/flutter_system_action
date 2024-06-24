@@ -80,6 +80,26 @@ class MockFlutterSystemActionPlatform
   Future<void> vibrationButtonPress() {
     throw UnimplementedError();
   }
+
+  @override
+  Future<int> getDeviceOrientation() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<String> getDeviceLocale() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<int> getBatteryChargingStatus() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<int> getNetworkStatus() {
+    throw UnimplementedError();
+  }
 }
 
 void main() {

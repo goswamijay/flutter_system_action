@@ -13,6 +13,10 @@ volume, toggling the torch, changing brightness, and more on Android devices.
 - 📳 Toggle vibration mode on/off
 - 📳 Toggle ring mode on
 - 🌑 Open display settings for dark mode
+- 📶 Retrieve device orientation
+- 🌐 Retrieve device locale
+- 🔋 Retrieve battery charging status
+- 📡 Retrieve network status
 
 ## 🚀 Getting Started
 
@@ -22,7 +26,7 @@ Add the following line to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_system_action: ^1.0.2
+  flutter_system_action: ^1.0.4
 ```
 
 Then, run flutter pub get to install the package.
@@ -35,6 +39,8 @@ permissions to your AndroidManifest.xml file:
 ``` 
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 ```
 
 ### Permission For Flashlight
@@ -61,21 +67,128 @@ import 'package:flutter_system_action/flutter_system_action.dart';
 
 ### Methods
 
-- `volumeButtonRaiseEvent()`: Increases the music volume.
-- `volumeButtonLowerEvent()`: Decreases the music volume.
-- `torchButtonOnEvent()`: Turns on the torch (flashlight)
-- `torchButtonOffEvent()`: Turns off the torch (flashlight).
-- `brightnessRaiseEvent()`: Increases the screen brightness.
-- `brightnessLowerEvent()`: Decreases the screen brightness.
-- `brightnessMaxEvent()`: Sets the screen brightness to maximum.
-- `brightnessZeroEvent()`: Sets the screen brightness to zero.
-- `ringtoneVolumeRaiseEvent()`: Increases the ringtone volume.
-- `ringtoneVolumeDownEvent()`: Decreases the ringtone volume.
-- `notificationVolumeRaisePress()`: Increases the notification volume.
-- ` notificationVolumeDownPress()`: Decreases the notification volume.
-- `vibrationButtonPress()`: Sets the phone to vibration mode.
-- `ringModeOnButtonPress()`: Sets the phone to ring mode.
-- `darkModeEventButtonPressed()`: Opens the display settings for dark mode.
+- `volumeButtonRaiseEvent()`:
+
+    - Increases the music volume.
+- `volumeButtonLowerEvent()`:
+
+    - Decreases the music volume.
+- `torchButtonOnEvent()`:
+
+    - Turns on the torch (flashlight)
+
+- `torchButtonOffEvent()`:
+
+    - Turns off the torch (flashlight).
+
+- `brightnessRaiseEvent()`:
+
+    - Increases the screen brightness.
+
+- `brightnessLowerEvent()`:
+
+    - Decreases the screen brightness.
+
+- `brightnessMaxEvent()`:
+
+    - Sets the screen brightness to maximum.
+
+- `brightnessZeroEvent()`:
+
+    - Sets the screen brightness to zero.
+
+- `ringtoneVolumeRaiseEvent()`:
+
+    - Increases the ringtone volume.
+
+- `ringtoneVolumeDownEvent()`:
+
+    - Decreases the ringtone volume.
+
+- `notificationVolumeRaisePress()`:
+
+    - Increases the notification volume.
+
+- ` notificationVolumeDownPress()`:
+
+    - Decreases the notification volume.
+
+- `vibrationButtonPress()`:
+
+    - Sets the phone to vibration mode.
+
+- `ringModeOnButtonPress()`:
+
+    - Sets the phone to ring mode.
+
+- `darkModeEventButtonPressed()`:
+
+    - Opens the display settings for dark mode.
+
+- `getDeviceOrientation()` :
+    - The device orientation as an integer:
+        - 1: Portrait orientation
+        - 2: Landscape orientation
+        - 0: Unknown orientation
+
+    - Example usage:
+
+```
+Future<int> getDeviceOrientation() async {
+  final int orientation = await FlutterSystemActionPlatform.instance.getDeviceOrientation();
+  return orientation;
+}
+
+```
+
+- `getDeviceLocale()`
+
+    - The device locale as a string (e.g., en_US).
+    - Example usage:
+
+```
+Future<String> getDeviceLocale() async {
+  final String deviceLocale = await FlutterSystemActionPlatform.instance.getDeviceLocale();
+  return deviceLocale;
+}
+
+```
+
+- `getNetworkStatus()`
+
+    - The network status as an integer:
+        - 1: Connected to Wi-Fi
+        - 2: Connected to mobile data
+        - 3: Connected to Ethernet
+        - 0: Connection type unknown
+        - -1: No internet connection
+
+    - Example usage:
+
+```
+Future<int> getNetworkStatus() async {
+  final int networkStatus = await FlutterSystemActionPlatform.instance.getNetworkStatus();
+  return networkStatus;
+}
+
+```
+
+- `getBatteryChargingStatus()`
+
+    - The battery charging status as an integer:
+        - 0: Charging
+        - 1: Discharging
+        - 2: Not charging
+
+    - Example usage:
+
+```
+Future<int> getBatteryChargingStatus() async {
+  final int chargingStatus = await FlutterSystemActionPlatform.instance.getBatteryChargingStatus();
+  return chargingStatus;
+}
+
+```
 
 ## Contributing
 

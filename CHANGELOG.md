@@ -23,3 +23,12 @@
 
 - update readme file
 
+## 1.0.4
+
+### update
+
+- Implemented a new feature to get Device Orientation.
+- Implemented a new feature to get Device Locale.
+- Implemented a new feature to get Network Status.
+- Implemented a new feature to get Battery Charging Status.
+

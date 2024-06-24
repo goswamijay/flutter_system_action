@@ -60,4 +60,52 @@ class FlutterSystemAction {
   Future<void> darkModeEventButtonPressed() async {
     await FlutterSystemActionPlatform.instance.darkModeEventButtonPressed();
   }
+
+  ///getDeviceOrientation() RETURN INT VALUE
+  /*
+  PORTRAIT ORIENTATION -->> 1
+  LANDSCAPE ORIENTATION -->> 2
+  Unknown ORIENTATION -->> 0
+  */
+  Future<int> getDeviceOrientation() async {
+    final int orientation =
+        await FlutterSystemActionPlatform.instance.getDeviceOrientation();
+    return orientation;
+  }
+
+  ///getDeviceLocale() RETURN STRING VALUE
+  /*
+ en_US
+  */
+  Future<String> getDeviceLocale() async {
+    final String deviceLocale =
+        await FlutterSystemActionPlatform.instance.getDeviceLocale();
+    return deviceLocale;
+  }
+
+  ///getNetworkStatus() RETURN INT VALUE
+  /*
+  iSConnectWithWifi = 1
+  iSConnectWithMobileData = 2
+  iSConnectWithEthernet = 3
+  iSConnectWithUnknown = 0
+  noInternetConnect = -1
+  */
+  Future<int> getNetworkStatus() async {
+    final int networkStatus =
+        await FlutterSystemActionPlatform.instance.getNetworkStatus();
+    return networkStatus;
+  }
+
+  ///getBatteryChargingStatus() RETURN INT VALUE
+  /*
+  Charging = 0
+  Discharging = 1
+  Not Charging = 2
+  */
+  Future<int> getBatteryChargingStatus() async {
+    final int chargingStatus =
+        await FlutterSystemActionPlatform.instance.getBatteryChargingStatus();
+    return chargingStatus;
+  }
 }
